@@ -17,32 +17,24 @@ let resumeData = {
           "className":"fa fa-github"
         }
       ],
-    "aboutme":"> Engineering Professional with 4 Years of experience in Automotive Automation Development in ADAS AUTOSAR Domain, SIL & HIL Software Validation and CI/CD DevOps.\n> Expertise in developing Python automation scripts for ADAS AUTOSAR stack C/C++ code generation , ARXML parsing and Validation of ADAS Functional Requirements.\n> Development of Internal Web Application for Mapping tool of AUTOSAR ports and ADAS Software Components (SwC) using Django RESTAPI and React JS and PostgreSQL Database.\n> Hands-on Experience with dSPACE Simulator-based Hardware in Loop Testing of Engine and Transmission ECU.\n> Hands-on Experience in Requirements Analysis, Test Cases Development and Automation XIL API and CAPL Scripting.",
     "address":"India",
-    "website":"",
+    "website":"itsmanikandanraju@gmail.com",
     "education":[
       {
-        "UniversityName":"The LNM Insitute of Information Technology",
-        "specialization":"Some specialization",
-        "MonthOfPassing":"Aug",
-        "YearOfPassing":"2020",
-        "Achievements":"Some Achievements"
-      },
-      {
-        "UniversityName":"Some University",
-        "specialization":"Some specialization",
-        "MonthOfPassing":"Jan",
-        "YearOfPassing":"2018",
-        "Achievements":"Some Achievements"
+        "UniversityName":"Madras Insitute of Technology",
+        "specialization":"B.E, Automobile Engineering",
+        "MonthOfPassing":"Apr",
+        "YearOfPassing":"2019",
+        "Achievements":"CGPA : 8.6"
       }
     ],
     "work":[
       {
-        "CompanyName":"Some Company",
-        "specialization":"Some specialization",
-        "MonthOfLeaving":"Jan",
-        "YearOfLeaving":"2018",
-        "Achievements":"Some Achievements"
+        "CompanyName":"Mercedes Benz Research and Development India",
+        "specialization":"Software Engineer",
+        "MonthOfLeaving":"Present",
+        "YearOfLeaving":"",
+        "Achievements":""
       }
     ],
     "skillsDescription":"",
@@ -51,15 +43,15 @@ let resumeData = {
         "skillname":"Python"
       },
       {
-        "skillname":"CSS"
+        "skillname":"C++"
       }
     ],
     "portfolio":[
-      {
-        "name":"project1",
-        "description":"mobileapp",
-        "imgurl":"images/portfolio/phone.jpg"
-      }
+    {
+      "name":"ARXML Parser",
+      "description":"Python script to parse AXRML file to extract Port and SWCs Parameters using xml module",
+      "imgurl":"https://github.com/Manikandan-Raju/arxml_parser"}
+    
     ],
     "testimonials":[
     ]
