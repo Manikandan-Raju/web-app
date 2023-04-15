@@ -41,9 +41,6 @@ let resumeData = {
     "skills":[
       {
         "skillname":"Python"
-      },
-      {
-        "skillname":"C++"
       }
     ],
     "portfolio":[
