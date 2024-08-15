@@ -93,17 +93,17 @@ function App() {
         },
       ],
     });
-  
-  },[investment,rate,years,inflation]);
+
+  }, [investment, rate, years, inflation]);
 
   useEffect(() => {
     calculateSIP();
-  }, [investment, rate, years, inflation,calculateSIP]);
+  }, [investment, rate, years, inflation, calculateSIP]);
 
   return (
     <Container fluid >
       <Col sm={4}>
-        <Row className="mb-3">
+        <Row >
           <Col sm={4}>
             <Form.Label>Monthly SIP</Form.Label>
           </Col>
@@ -127,7 +127,7 @@ function App() {
             />
           </Col>
         </Row>
-        <Row className="mb-3">
+        <Row>
           <Col sm={4}>
             <Form.Label>Years</Form.Label>
           </Col>
@@ -150,7 +150,7 @@ function App() {
             />
           </Col>
         </Row>
-        <Row className="mb-3">
+        <Row >
           <Col sm={4}>
             <Form.Label>Rate (%)</Form.Label>
           </Col>
@@ -173,7 +173,7 @@ function App() {
             />
           </Col>
         </Row>
-        <Row className="mb-3">
+        <Row>
           <Col sm={4}>
             <Form.Label>Inflation (%)</Form.Label>
           </Col>
@@ -197,30 +197,43 @@ function App() {
 
           </Col>
         </Row>
-        
         <Row>
           {chartData && (
             <Line data={chartData} options={{ responsive: true }} />
           )}
         </Row>
+        <Row style={{ padding: "0%" }}>
+          <Col sm={4}>
 
-        <Row className="mb-3">
-          <Col sm={3}>
-            <Form.Label>Actual Investment</Form.Label>
           </Col>
-          <Col sm={3} >
-            <Form.Label >{Intl.NumberFormat().format(ActualInvestment)} ({Intl.NumberFormat().format(ActualInvestmentInflation)})</Form.Label>
+          <Col sm={4}>
+            <Form.Label>Investment</Form.Label>
           </Col>
-
-
-          <Col sm={3}>
-            <Form.Label>Future Return</Form.Label>
+          <Col sm={4}>
+            <Form.Label>Returns</Form.Label>
           </Col>
-          <Col sm={3} >
-            <Form.Label >{Intl.NumberFormat().format(FutureReturn)} ({Intl.NumberFormat().format(FutureReturnInflation)})</Form.Label>
+        </Row>
+        <Row style={{ padding: "0%" }}>
+          <Col sm={4}>
+            <Form.Label>Actual</Form.Label>
           </Col>
-
-
+          <Col sm={4} >
+            <Form.Label >{Intl.NumberFormat().format(ActualInvestment)} </Form.Label>
+          </Col>
+          <Col sm={4} >
+            <Form.Label >{Intl.NumberFormat().format(FutureReturn)} </Form.Label>
+          </Col>
+        </Row>
+        <Row style={{ padding: "0%" }}>
+          <Col sm={4}>
+            <Form.Label>Inflation</Form.Label>
+          </Col>
+          <Col sm={4} >
+            <Form.Label >{Intl.NumberFormat().format(ActualInvestmentInflation)}</Form.Label>
+          </Col>
+          <Col sm={4} >
+            <Form.Label >{Intl.NumberFormat().format(FutureReturnInflation)}</Form.Label>
+          </Col>
         </Row>
       </Col>
     </Container>
