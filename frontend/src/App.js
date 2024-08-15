@@ -9,10 +9,10 @@ import { Chart as ChartJS, CategoryScale, LinearScale, LineElement, Title, Toolt
 ChartJS.register(CategoryScale, LinearScale, LineElement, Title, Tooltip, Legend, PointElement);
 
 function App() {
-  const [investment, setInvestment] = useState(2000);
+  const [investment, setInvestment] = useState(2500);
   const [rate, setRate] = useState(13);
   const [inflation, setinflation] = useState(7);
-  const [years, setYears] = useState(20);
+  const [years, setYears] = useState(15);
   const [ActualInvestment, setActualInvestment] = useState(0);
   const [FutureReturn, setFutureReturn] = useState(null);
   const [chartData, setChartData] = useState(null);
@@ -124,7 +124,7 @@ function App() {
             />
             <Form.Range
               min="0"
-              max="50000"
+              max="25000"
               step="500"
               value={investment}
               onChange={(e) => {
@@ -147,7 +147,7 @@ function App() {
             />
             <Form.Range
               min="0"
-              max="50"
+              max="40"
               step="1"
               value={years}
               onChange={(e) => {
