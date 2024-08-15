@@ -18,6 +18,8 @@ function App() {
   const [chartData, setChartData] = useState(null);
   const [ActualInvestmentInflation, setActualInvestmentInflation] = useState(null);
   const [FutureReturnInflation, setFutureReturnInflation] = useState(null);
+  const [FutureInvestmentInflation, setFutureInvestmentInflation] = useState(null);
+  
 
 
   const calculateSIP = useCallback(() => {
@@ -41,6 +43,10 @@ function App() {
       const actual_investment_inflation = investment * ((Math.pow(1 + inflationPerMonth, months) - 1) / inflationPerMonth) * (1 + inflationPerMonth);
       actual_investments_inflation.push(actual_investment_inflation.toFixed(2));
       setActualInvestmentInflation(actual_investment_inflation.toFixed(0))
+
+      const infPerMonth = (inflation / 12 / 100);
+      const future_investment_inflation = investment * ((Math.pow(1 + infPerMonth, months) - 1) / infPerMonth) * (1 + infPerMonth);
+      setFutureInvestmentInflation(future_investment_inflation.toFixed(0))
 
       const inf_sip = investment * ((Math.pow(1 + inflationReturnsPerMonth, months) - 1) / inflationReturnsPerMonth) * (1 + inflationReturnsPerMonth);
       future_returns_inflation.push(inf_sip.toFixed(2));
@@ -235,14 +241,14 @@ function App() {
             <Form.Label >{Intl.NumberFormat().format(((  FutureReturn - ActualInvestment - 125000 )*0.125).toFixed(0))} </Form.Label>
           </Col>
           <Col xs={4}>
-            <Form.Label >({Intl.NumberFormat().format(( ( FutureReturnInflation - ActualInvestmentInflation - 125000 )*0.125).toFixed(0))})</Form.Label>
+            <Form.Label >({Intl.NumberFormat().format(( ( FutureReturn - FutureInvestmentInflation - 125000 )*0.125).toFixed(0))})</Form.Label>
           </Col>
 
         </Row>
         <Row className="mt-5" style={{display:"center",alignContent:"center"}}>
         <Col style={{display:"center",alignContent:"center"}}>
           <Form.Text className="text-center">
-            <small>Developed by Manikandan Raju</small>
+            <small>Developed by Manikandan Raju. Disclaimer: The information provided in this application is for educational and informational purposes only and should not be considered as financial, investment, or professional advice.</small>
           </Form.Text>
         </Col>
       </Row>
