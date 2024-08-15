@@ -203,25 +203,25 @@ function App() {
           )}
         </Row>
         <Row >
-          <Col sm={4}>
+          <Col xs={4}>
             <Form.Label>Investment</Form.Label>
           </Col>
-          <Col sm={4}>
+          <Col xs={4}>
             <Form.Label >{Intl.NumberFormat().format(ActualInvestment)} </Form.Label>
           </Col>
-          <Col sm={4}>
+          <Col xs={4}>
             <Form.Label >({Intl.NumberFormat().format(ActualInvestmentInflation)})</Form.Label>
           </Col>
         </Row>
         <Row >
 
-          <Col sm={4}>
+          <Col xs={4}>
             <Form.Label>Returns</Form.Label>
           </Col>
-          <Col sm={4}>
+          <Col xs={4}>
             <Form.Label >{Intl.NumberFormat().format(FutureReturn)} </Form.Label>
           </Col>
-          <Col sm={4}>
+          <Col xs={4}>
             <Form.Label >({Intl.NumberFormat().format(FutureReturnInflation)})</Form.Label>
           </Col>
 
