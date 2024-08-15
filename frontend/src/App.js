@@ -226,6 +226,26 @@ function App() {
           </Col>
 
         </Row>
+        <Row >
+
+          <Col xs={4}>
+            <Form.Label>LTCG Tax</Form.Label>
+          </Col>
+          <Col xs={4}>
+            <Form.Label >{Intl.NumberFormat().format(((  FutureReturn - ActualInvestment - 125000 )*0.125).toFixed(0))} </Form.Label>
+          </Col>
+          <Col xs={4}>
+            <Form.Label >({Intl.NumberFormat().format(( ( FutureReturnInflation - ActualInvestmentInflation - 125000 )*0.125).toFixed(0))})</Form.Label>
+          </Col>
+
+        </Row>
+        <Row className="mt-5" style={{display:"center",alignContent:"center"}}>
+        <Col style={{display:"center",alignContent:"center"}}>
+          <Form.Text className="text-center">
+            <small>Developed by Manikandan Raju</small>
+          </Form.Text>
+        </Col>
+      </Row>
 
       </Col>
     </Container>
