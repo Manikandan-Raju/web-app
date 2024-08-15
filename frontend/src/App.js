@@ -9,7 +9,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, LineElement, Title, Toolt
 ChartJS.register(CategoryScale, LinearScale, LineElement, Title, Tooltip, Legend, PointElement);
 
 function App() {
-  const [investment, setInvestment] = useState(10000);
+  const [investment, setInvestment] = useState(1000);
   const [rate, setRate] = useState(13);
   const [inflation, setinflation] = useState(7);
   const [years, setYears] = useState(20);
@@ -116,6 +116,15 @@ function App() {
                 setInvestment(parseFloat(e.target.value))
               }}
             />
+            <Form.Range
+              min="0"
+              max="50000"
+              step="500"
+              value={investment}
+              onChange={(e) => {
+                setInvestment(parseFloat(e.target.value))
+              }}
+            />
           </Col>
         </Row>
         <Row className="mb-3">
@@ -125,6 +134,15 @@ function App() {
           <Col sm={8} style={{ alignContent: "center" }}>
             <Form.Control
               type="number"
+              value={years}
+              onChange={(e) => {
+                setYears(parseFloat(e.target.value));
+              }}
+            />
+            <Form.Range
+              min="0"
+              max="50"
+              step="1"
               value={years}
               onChange={(e) => {
                 setYears(parseFloat(e.target.value));
@@ -144,6 +162,15 @@ function App() {
                 setRate(parseFloat(e.target.value));
               }}
             />
+            <Form.Range
+              min="0"
+              max="20"
+              step="1"
+              value={rate}
+              onChange={(e) => {
+                setRate(parseFloat(e.target.value));
+              }}
+            />
           </Col>
         </Row>
         <Row className="mb-3">
@@ -158,8 +185,25 @@ function App() {
                 setinflation(parseFloat(e.target.value));
               }}
             />
+            <Form.Range
+              min="0"
+              max="15"
+              step="1"
+              value={inflation}
+              onChange={(e) => {
+                setinflation(parseFloat(e.target.value));
+              }}
+            />
+
           </Col>
         </Row>
+        
+        <Row>
+          {chartData && (
+            <Line data={chartData} options={{ responsive: true }} />
+          )}
+        </Row>
+
         <Row className="mb-3">
           <Col sm={3}>
             <Form.Label>Actual Investment</Form.Label>
@@ -177,11 +221,6 @@ function App() {
           </Col>
 
 
-        </Row>
-        <Row>
-          {chartData && (
-            <Line data={chartData} options={{ responsive: true }} />
-          )}
         </Row>
       </Col>
     </Container>
