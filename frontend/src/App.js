@@ -202,39 +202,31 @@ function App() {
             <Line data={chartData} options={{ responsive: true }} />
           )}
         </Row>
-        <Row style={{ padding: "0%" }}>
-          <Col sm={4}>
-
-          </Col>
+        <Row >
           <Col sm={4}>
             <Form.Label>Investment</Form.Label>
           </Col>
           <Col sm={4}>
-            <Form.Label>Returns</Form.Label>
-          </Col>
-        </Row>
-        <Row style={{ padding: "0%" }}>
-          <Col sm={4}>
-            <Form.Label>Actual</Form.Label>
-          </Col>
-          <Col sm={4} >
             <Form.Label >{Intl.NumberFormat().format(ActualInvestment)} </Form.Label>
           </Col>
-          <Col sm={4} >
+          <Col sm={4}>
+            <Form.Label >({Intl.NumberFormat().format(ActualInvestmentInflation)})</Form.Label>
+          </Col>
+        </Row>
+        <Row >
+
+          <Col sm={4}>
+            <Form.Label>Returns</Form.Label>
+          </Col>
+          <Col sm={4}>
             <Form.Label >{Intl.NumberFormat().format(FutureReturn)} </Form.Label>
           </Col>
-        </Row>
-        <Row style={{ padding: "0%" }}>
           <Col sm={4}>
-            <Form.Label>Inflation</Form.Label>
+            <Form.Label >({Intl.NumberFormat().format(FutureReturnInflation)})</Form.Label>
           </Col>
-          <Col sm={4} >
-            <Form.Label >{Intl.NumberFormat().format(ActualInvestmentInflation)}</Form.Label>
-          </Col>
-          <Col sm={4} >
-            <Form.Label >{Intl.NumberFormat().format(FutureReturnInflation)}</Form.Label>
-          </Col>
+
         </Row>
+
       </Col>
     </Container>
   );
