@@ -9,7 +9,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, LineElement, Title, Toolt
 ChartJS.register(CategoryScale, LinearScale, LineElement, Title, Tooltip, Legend, PointElement);
 
 function App() {
-  const [investment, setInvestment] = useState(1000);
+  const [investment, setInvestment] = useState(2000);
   const [rate, setRate] = useState(13);
   const [inflation, setinflation] = useState(7);
   const [years, setYears] = useState(20);
