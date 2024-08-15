@@ -248,7 +248,7 @@ function App() {
         <Row style={{display:"center",alignContent:"center"}}>
         <Col style={{display:"center",alignContent:"center"}}>
           <Form.Text className="text-center">
-            <small>Developed by Manikandan Raju. Disclaimer: The information provided in this application is for educational and informational purposes only and should not be considered as financial, investment, or professional advice.</small>
+            <small>Disclaimer: The information provided in this application is for educational and informational purposes only and should not be considered as financial, investment, or professional advice. Developed by Manikandan Raju. </small>
           </Form.Text>
         </Col>
       </Row>
