@@ -17,11 +17,11 @@ function Gold() {
                 },
             };
             try {
-                const response = await fetch("https://www.goldapi.io/api/XAU/USD", requestOptions);
+                const response = await fetch("https://www.goldapi.io/api/XAU/INR", requestOptions);
                 const res = await response.json();
                 console.log(res);
-                const goldrate = res["price_gram_22k"] * 800
-                const goldrate_1g = res["price_gram_22k"] * 100
+                const goldrate = res["price_gram_22k"] * 8
+                const goldrate_1g = res["price_gram_22k"] * 1
                 console.log(goldrate);
                 setGoldRate(goldrate)
                 setGoldRate_1g(goldrate_1g)
