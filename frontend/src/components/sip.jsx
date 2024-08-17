@@ -6,9 +6,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, LineElement, Title, Tooltip, Legend, PointElement } from 'chart.js';
+
 ChartJS.register(CategoryScale, LinearScale, LineElement, Title, Tooltip, Legend, PointElement);
 
-function App() {
+export default function SIP() {
   const [investment, setInvestment] = useState(2500);
   const [rate, setRate] = useState(13);
   const [inflation, setinflation] = useState(7);
@@ -107,6 +108,7 @@ function App() {
   }, [investment, rate, years, inflation, calculateSIP]);
 
   return (
+    <>
     <Container fluid >
       <Col sm={4}>
         <Row >
@@ -255,7 +257,6 @@ function App() {
 
       </Col>
     </Container>
+    </>
   );
 }
-
-export default App;
