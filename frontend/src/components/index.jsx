@@ -11,25 +11,25 @@ export default function Index() {
     return (
         <Container fluid>
             <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
             <Row >
-                <Col xs={4}>
+                {/* <Col xs={4}>
                     <Link to="/gold">
                         <Button >
                             Gold
                         </Button>
                     </Link>
-                </Col>
-                <Col>
+                </Col> */}
+                <Col xs={4}>
                     <Link to="/sip">
                         <Button >
                             SIP
+                        </Button>
+                    </Link>
+                </Col>
+                <Col xs={4}>
+                    <Link to="/savings">
+                        <Button >
+                            Savings
                         </Button>
                     </Link>
                 </Col>

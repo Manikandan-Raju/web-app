@@ -4,6 +4,8 @@ import SIP from './components/sip.jsx';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Gold from './components/gold.jsx'
 import Index from './components/index.jsx'
+import Savings from './components/savings.jsx'
+
 function App() {
   return(
   <BrowserRouter>
@@ -11,9 +13,7 @@ function App() {
             <Route path="/" element={<Index />} />
             <Route path="sip" element={<SIP />} />
             <Route path="gold" element={<Gold />} />
-            {/* <Route path="blogs" element={<Blogs />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="*" element={<NoPage />} /> */}
+            <Route path="savings" element={<Savings />} />
       </Routes>
     </BrowserRouter>
   )
