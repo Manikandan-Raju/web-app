@@ -4,12 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-import { FaTrash } from 'react-icons/fa';
+import { FaPlus ,FaTrash } from 'react-icons/fa';
 
 export default function Savings() {
     const [Savings, setSavings] = useState([{
         "Particular": "",
-        "Amount": 0
+        "Amount": ""
     }]);
 
 
@@ -23,11 +23,12 @@ export default function Savings() {
         setSavings(saving)
     }
 
-    function OnAdd(e) {
-        const saving = [...Savings, {
+    function OnAdd(e, index) {
+        const saving = [...Savings];
+        saving.splice(index, 0, {
             "Particular": "",
-            "Amount": 0
-        }];
+            "Amount": ""
+        });
         setSavings(saving)
     }
 
@@ -43,7 +44,7 @@ export default function Savings() {
     return (
         <>
             <Container fluid >
-                <Table striped bordered hover>
+                <Table bordered hover>
                     <thead>
                         <tr>
                             <th>#</th>
@@ -56,23 +57,28 @@ export default function Savings() {
                         {
                             Savings.map((saving, index) => (
                                 <tr key={index}>
-                                    <td>{index + 1}
+                                    <td >{index + 1}
+                                    <span> </span>
+                                        <Button
+                                            onClick={(e) => { OnAdd(e, index) }}>
+                                            <FaPlus />
+                                        </Button>
                                         <span> </span>
                                         <Button
                                             onClick={(e) => { OnSub(e, index) }}>
                                             <FaTrash />
                                         </Button>
+                                        
                                     </td>
-                                    <td>
+                                    <td  >
                                         <Form.Control
                                             value={saving.Particular}
                                             onChange={(e) => { OnEdit(e.target.value, "Particular", index); }}
                                         >
                                         </Form.Control>
                                     </td>
-                                    <td>
+                                    <td  >
                                         <Form.Control
-                                            type="number"
                                             value={saving.Amount}
                                             onChange={(e) => { OnEdit(e.target.value, "Amount", index); }}
                                         >
@@ -83,8 +89,8 @@ export default function Savings() {
                     </tbody>
                 </Table>
                 <Button
-                    onClick={(e) => { OnAdd(e) }}>
-                    +
+                    onClick={(e) => { OnAdd(e, Savings.length + 1) }}>
+                    <FaPlus />
                 </Button>
 
             </Container>
