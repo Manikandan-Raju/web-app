@@ -12,13 +12,13 @@ export default function Index() {
         <Container fluid>
             <br/>
             <Row >
-                {/* <Col xs={4}>
+                <Col xs={4}>
                     <Link to="/gold">
                         <Button >
                             Gold
                         </Button>
                     </Link>
-                </Col> */}
+                </Col>
                 <Col xs={4}>
                     <Link to="/sip">
                         <Button >
