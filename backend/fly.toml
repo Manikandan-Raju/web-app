@@ -1,0 +1,33 @@
+# fly.toml app configuration file generated for backend-restless-resonance-9600 on 2025-07-21T18:05:50+05:30
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'backend-restless-resonance-9600'
+primary_region = 'bom'
+console_command = '/code/manage.py shell'
+
+[build]
+
+[deploy]
+  release_command = 'python manage.py migrate --noinput'
+
+[env]
+  DATABASE_URL = 'postgresql://neondb_owner:npg_R6o8pIQPBOvk@ep-empty-glade-a19j8zv2-pooler.ap-southeast-1.aws.neon.tech:5432/neondb'
+  PORT = '8000'
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
+
+[[statics]]
+  guest_path = '/code/static'
+  url_prefix = '/static/'

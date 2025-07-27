@@ -1,0 +1,9 @@
+django
+psycopg2-binary
+djangorestframework
+virtualenv
+django-cors-headers
+black
+dotenv
+django-environ
+gunicorn
